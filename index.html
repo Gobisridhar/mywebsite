@@ -5,7 +5,18 @@
   <title>www.pollachitouristplace.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
+    
+        header {
+  background-image: url("InShot_20250621_144156731.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  box-shadow: 5 20px 50px rgba(0,0,0,0.1);
+}
+ * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -19,8 +30,8 @@
     }
 
     header {
-      background-color: #32db10;
-      color: #0b0b0b;
+      background-color: #15b7db;
+      color: #94eff9;
       padding: 20px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -64,7 +75,6 @@
     .links a:hover {
       text-decoration: underline;
     }
-
     footer {
       background: #1ae84a;
       color: white;
@@ -98,17 +108,68 @@
   <meta charset="UTF-8">
   <title>Pollachi Tourism</title>
 </head>
-<body>
-  <h1>Welcome to Pollachi</h1>
-  <img src="download (4).jpeg" alt="Pollachi View" width="400px">
-  <img src="Screenshot_2025_0620_211348.jpg" width="400px">
-  <img src="Screenshot_2025_0620_211314.jpg" width="400px">
-</body>
 </html>
 
   <div class="container">
+    <!-- Add inside .container -->
+<div style="max-width: 500px; margin: 20px auto;">
+  <img src="InShot_20250621_144156731.jpg" id="slider" width="100%" style="border-radius: 8px;">
+</div>
+
+<script>
+  const images = [
+    "InShot_20250621_143828469.jpg",
+    "InShot_20250621_143800040.jpg",
+    "InShot_20250621_143730208.jpg",
+    "InShot_20250621_143701822.jpg",
+    "InShot_20250621_143634326.jpg",
+    "InShot_20250621_143557496.jpg",
+    "InShot_20250621_143516082.jpg",
+
+  ];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % images.length;
+    document.getElementById("slider").src = images[i];
+  }, 1500);
+</script>
+
     <h2>Explore Pollachi Tourist Places</h2>
-    <p>Here are some helpful links to know more about tourist attractions in Pollachi:</p>
+
+    <p>Click the map below to view the location of Pollachi in Coimbatore:</p>
+
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.216927571596!2d76.99809507480688!3d10.658299962229955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba83d43eddd9353%3A0xf89775881ffb1786!2sPollachi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1718978131771!5m2!1sen!2sin" 
+  width="342" 
+  height="306" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+<br>
+<br>
+<p>Welcome to most famous place direct location</p>
+  <label for="city">City:</label>
+<select name="city" id="city" onchange="goToPlace(this.value)">
+  <option value="">-- Select a Place --</option>
+  <option value="https://www.google.com/maps/place/Aliyar+Dam+Park/@10.481635,76.9534761,16z/data=!4m19!1m12!4m11!1m6!1m2!1s0x3ba839d117dea505:0xb3fd96d9c8642659!2zUG9sbGFjaGkg4K6q4K-K4K6z4K-N4K6z4K6-4K6a4K-N4K6a4K6_!2m2!1d77.004759!2d10.6608925!1m3!2m2!1d76.9631608!2d10.4663696!3m5!1s0x3ba82455039d8bf1:0xee54a30a180b485e!8m2!3d10.4816347!4d76.9623257!16s%2Fg%2F1tk_mqcq?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Aliyar Dam</option>
+  <option value="https://www.google.com/maps/place/Valparai,+Tamil+Nadu+642127/@10.326973,76.9450969,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba8279db1aa1b0f:0x86bc2b6e18667469!8m2!3d10.3269734!4d76.9553967!16zL20vMGY2bG55?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Valparai</option>
+  <option value="https://www.google.com/maps/place/Anaimalai,+Tamil+Nadu+642104/@10.5820878,76.9239589,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba83b9afe4e320f:0xf57279cf79b8e1c4!8m2!3d10.5820882!4d76.9342587!16zL20vMDg4bHl0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Anamalai</option>
+</select>
+
+<script>
+  function goToPlace(link) {
+    if (link) {
+      window.open(link, '_blank'); // Open in a new tab
+    }
+  }
+</script>
+<br>
+<br>
+<p>Learn more about <a href="https://en.wikipedia.org/wiki/Pollachi" target="_blank">Pollachi on Wikipedia</a>.</p>
+<br>
+<p>Here are some helpful links to know more about tourist attractions in Pollachi:</p>
 
     <div class="links">
       <a href="https://www.google.com/search?q=Pollachi+details+tourist+places" target="_blank">Pollachi Tourist Guide - Google Search</a>
@@ -116,6 +177,18 @@
       <a href="https://tamilnadu-favtourism.blogspot.com/2015/12/pollachi.html" target="_blank">Pollachi Info - Tamilnadu Tourism Blog</a>
     </div>
   </div>
+<div class="form-container">
+  <h2>Visitor Feedback</h2>
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfaMGWAT9bRJWlhahoLOLwV2GtwxioC78aNDnwBah2hbZZlYw/viewform?usp=dialog" 
+    width="640" 
+    height="600" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0">
+    Loading…
+  </iframe>
+</div>
 
   <footer>
     <p>&copy; 2025 My Original Website. All rights reserved.</p>
