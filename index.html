@@ -4,35 +4,30 @@
   <meta charset="UTF-8">
   <title>www.pollachitouristplace.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
-    
-        header {
-  background-image: url("InShot_20250621_144156731.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
-  padding: 40px 0;
-  text-align: center;
-  box-shadow: 5 20px 50px rgba(0,0,0,0.1);
-}
- * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #f4f7fa;
       color: #333;
       line-height: 1.6;
+      text-align: center;
+      padding-bottom: 100px; /* for footer space */
     }
 
     header {
-      background-color: #15b7db;
-      color: #94eff9;
-      padding: 20px 0;
+      background-image: url("InShot_20250621_144156731.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      padding: 40px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -51,7 +46,20 @@
     nav a:hover {
       text-decoration: underline;
     }
-
+ .lang-switcher {
+      text-align: right;
+      margin: 10px;
+    }
+    .lang-switcher button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #388e3c;
+      color: white;
+      border-radius: 4px;
+    }
     .container {
       max-width: 1000px;
       margin: 30px auto;
@@ -59,6 +67,107 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    /* Pollachi Maariyamman festival */
+body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    .popup-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Popup container */
+    .popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+
+    .popup img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .popup-close {
+      margin-top: 10px;
+      background: #dc3545;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      z-index: 999;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    .section-box {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .section-box h2 {
+      color: #28a745;
+    }
+
+    ul {
+      padding-left: 20px;
+      text-align: left;
     }
 
     .links {
@@ -75,6 +184,11 @@
     .links a:hover {
       text-decoration: underline;
     }
+
+    .form-container {
+      margin-top: 40px;
+    }
+
     footer {
       background: #1ae84a;
       color: white;
@@ -98,100 +212,284 @@
   </style>
 </head>
 <body>
+
+<div class="lang-switcher">
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('ta')">தமிழ்</button>
+</div>
+
+<script>
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){
+        js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(document,'script','weatherwidget-io-js');
+  </script>
+
   <header>
-    <h1>Welcome to Pollachi Tourism</h1>
+    <h1 id="main-heading">Welcome to Pollachi Tourism</h1>
     <nav>
       <a href="#">Home</a>
     </nav>
   </header>
-<head>
-  <meta charset="UTF-8">
-  <title>Pollachi Tourism</title>
-</head>
-</html>
 
   <div class="container">
-    <!-- Add inside .container -->
-<div style="max-width: 500px; margin: 20px auto;">
-  <img src="InShot_20250621_144156731.jpg" id="slider" width="100%" style="border-radius: 8px;">
-</div>
-
+  
+  <!--Weather Update -->
+ <title>Pollachi Weather</title>
+  <h2 id="weather-title">Current Weather in Pollachi</h2>
+  <a class="weatherwidget-io" href="https://forecast7.com/en/10d6677d01/pollachi/" data-label_1="POLLACHI" data-label_2="WEATHER" data-theme="original" >POLLACHI WEATHER</a>
 <script>
-  const images = [
-    "InShot_20250621_143828469.jpg",
-    "InShot_20250621_143800040.jpg",
-    "InShot_20250621_143730208.jpg",
-    "InShot_20250621_143701822.jpg",
-    "InShot_20250621_143634326.jpg",
-    "InShot_20250621_143557496.jpg",
-    "InShot_20250621_143516082.jpg",
-
-  ];
-  let i = 0;
-  setInterval(() => {
-    i = (i + 1) % images.length;
-    document.getElementById("slider").src = images[i];
-  }, 1500);
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
 
-    <h2>Explore Pollachi Tourist Places</h2>
+    <!-- Image Slider -->
+    <div style="max-width: 500px; margin: 20px auto;">
+      <img src="InShot_20250621_144156731.jpg" id="slider" width="100%" style="border-radius: 8px;">
+    </div>
 
-    <p>Click the map below to view the location of Pollachi in Coimbatore:</p>
+    <script>
+      const images = [
+        "InShot_20250621_143828469.jpg",
+        "InShot_20250621_143800040.jpg",
+        "InShot_20250621_143730208.jpg",
+        "InShot_20250621_143701822.jpg",
+        "InShot_20250621_143634326.jpg",
+        "InShot_20250621_143557496.jpg",
+        "InShot_20250621_143516082.jpg",
+      ];
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % images.length;
+        document.getElementById("slider").src = images[i];
+      }, 1500);
+    </script>
+    <!--lightbox idea-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+</head>
+<body>
 
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.216927571596!2d76.99809507480688!3d10.658299962229955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba83d43eddd9353%3A0xf89775881ffb1786!2sPollachi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1718978131771!5m2!1sen!2sin" 
-  width="342" 
-  height="306" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+  <h2 id="video-title">Click Image to Watch Valparai Droneshot</h2>
+  <h3>provide by arjun_ca</h3>
+
+  <!-- Image that opens video in lightbox -->
+  <a data-fancybox href="videoplayback.mp4">
+    <img src="InShot_20250622_230925955.jpg" width="500" alt="Play Video">
+  </a>
+
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+</body>
+
+<!--Maariyamman festival-->
+<br><br>
+<h2 id="festival-title">HOW POLLACHI MAARIYAMMAN FESRTIVAL LIKE</h2>
+<button class="popup-btn" onclick="showPopup()">Click to View Info</button>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+  <!-- Popup Content -->
+  <div class="popup" id="popup">
+    <h3>Maariyamman festival part</h3>
+    <p>People from various villages come to Pollachi to enjoy the Mariamman chariot festival. The Mariamman chariot festival is held in the months of Chithirai and Vaikasi, and in the English month of April</p>
+    <img src="pollachi_maariyammantemple.heic" alt="Pollachi Place">
+    <img src="pollachi_maariyammanther.jpg" alt="Pollachi Place">
+    <img src="pollachi_maariyammankombam.jpg" alt="Pollachi Place">
+    <img src="pollachi_maariyammankomba2.jpg" alt="Pollachi Place">
+     <h4>Pollachi Chariot Procession</h4>
+    <video width="640" height="360" controls>
+  <source src="pollachi_maariyammanvideo3.mp4" type="video/mp4">
+</video>
+<video width="640" height="1150" controls>
+  <source src="pollachi_maariyammanvideo2.mp4" type="video/mp4">
+</video>
+<video width="640" height="1150" controls>
+  <source src="pollachi_maariyammanvideo1.mp4" type="video/mp4">
+</video>
 <br>
-<br>
-<p>Welcome to most famous place direct location</p>
-  <label for="city">City:</label>
-<select name="city" id="city" onchange="goToPlace(this.value)">
-  <option value="">-- Select a Place --</option>
-  <option value="https://www.google.com/maps/place/Aliyar+Dam+Park/@10.481635,76.9534761,16z/data=!4m19!1m12!4m11!1m6!1m2!1s0x3ba839d117dea505:0xb3fd96d9c8642659!2zUG9sbGFjaGkg4K6q4K-K4K6z4K-N4K6z4K6-4K6a4K-N4K6a4K6_!2m2!1d77.004759!2d10.6608925!1m3!2m2!1d76.9631608!2d10.4663696!3m5!1s0x3ba82455039d8bf1:0xee54a30a180b485e!8m2!3d10.4816347!4d76.9623257!16s%2Fg%2F1tk_mqcq?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Aliyar Dam</option>
-  <option value="https://www.google.com/maps/place/Valparai,+Tamil+Nadu+642127/@10.326973,76.9450969,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba8279db1aa1b0f:0x86bc2b6e18667469!8m2!3d10.3269734!4d76.9553967!16zL20vMGY2bG55?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Valparai</option>
-  <option value="https://www.google.com/maps/place/Anaimalai,+Tamil+Nadu+642104/@10.5820878,76.9239589,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba83b9afe4e320f:0xf57279cf79b8e1c4!8m2!3d10.5820882!4d76.9342587!16zL20vMDg4bHl0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Anamalai</option>
-</select>
+    <button class="popup-close" onclick="closePopup()">Close</button>
+  </div>
 
-<script>
-  function goToPlace(link) {
-    if (link) {
-      window.open(link, '_blank'); // Open in a new tab
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
     }
-  }
-</script>
-<br>
-<br>
-<p>Learn more about <a href="https://en.wikipedia.org/wiki/Pollachi" target="_blank">Pollachi on Wikipedia</a>.</p>
-<br>
-<p>Here are some helpful links to know more about tourist attractions in Pollachi:</p>
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+  <br><br>
+  <meta charset="UTF-8">
+  <title>Lightbox Demo</title>
+  <link rel="stylesheet" href="styles.css">
+    <h4 id="Pollachi-Explore">Explore Pollachi Tourist Places</h4>
+    <h5 id="Pollachi-Coibatore">Click the map below to view the location of Pollachi in Coimbatore:</h5>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.216927571596!2d76.99809507480688!3d10.658299962229955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba83d43eddd9353%3A0xf89775881ffb1786!2sPollachi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1718978131771!5m2!1sen!2sin" 
+      width="342" 
+      height="306" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <br><br>
+<h6 id="select-label">some famous place of pollachi:</h6>
+    <label id="city-tamil" for="city">City:</label>
+    <select name="city" id="city" onchange="goToPlace(this.value)">
+      <option value="">-- Select a Place --</option>
+      <option value="https://www.google.com/maps/place/Aliyar+Dam+Park/...">Aliyar Dam</option>
+      <option value="https://www.google.com/maps/place/Valparai,...">Valparai</option>
+      <option value="https://www.google.com/maps/place/Anaimalai,...">Anamalai</option>
+    </select>
+
+    <script>
+      function goToPlace(link) {
+        if (link) {
+          window.open(link, '_blank');
+        }
+      }
+    </script>
+
+    <br><br>
+   <p id="learn-title">
+  <span id="learn-text">Learn more about</span>
+  <a id="learn-link" href="https://en.wikipedia.org/wiki/Pollachi" target="_blank">Pollachi on Wikipedia</a>.
+</p>
+
+   <br>
+    <h7 id="links-title">Here are some helpful links to know more about tourist attractions in pollachi:</h7>
 
     <div class="links">
-      <a href="https://www.google.com/search?q=Pollachi+details+tourist+places" target="_blank">Pollachi Tourist Guide - Google Search</a>
-      <a href="https://www.tripadvisor.in/Tourism-g2289005-Pollachi_Tamil_Nadu-Vacations.html" target="_blank">TripAdvisor - Pollachi Travel Info</a>
-      <a href="https://tamilnadu-favtourism.blogspot.com/2015/12/pollachi.html" target="_blank">Pollachi Info - Tamilnadu Tourism Blog</a>
+      <a href="https://www.google.com/search?q=Pollachi+details+tourist+places" target="_blank">Pollachi Tourist Guide</a>
+      <a href="https://www.tripadvisor.in/Tourism-g2289005-Pollachi_Tamil_Nadu-Vacations.html" target="_blank">TripAdvisor Info</a>
+      <a href="https://tamilnadu-favtourism.blogspot.com/2015/12/pollachi.html" target="_blank">Tamilnadu Tourism Blog</a>
+    </div>
+
+    <!-- Buttons for Sections -->
+    <div style="margin-top: 40px;">
+      <button class="btn" onclick="toggleSection('about-section')">About</button>
+      <button class="btn" onclick="toggleSection('projects-section')">Projects</button>
+      <button class="btn" onclick="toggleSection('contact-section')">Contact</button>
+    </div>
+
+    <!-- About Section -->
+    <div id="about-section" class="section-box">
+      <h2>About Me</h2>
+      <p>Hello! I'm a Front-End Developer from Pollachi. I specialize in creating modern, responsive, and user-friendly websites using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects-section" class="section-box">
+      <h2>My Projects</h2>
+      <div>
+        <h3>Brain Tumor Segmentation</h3>
+        <p>ML project using U-Net to detect brain tumors in MRI scans.</p>
+        <a href="https://github.com/yourusername/brain-tumor-segmentation" target="_blank">View on GitHub</a>
+      </div>
+      <hr>
+      <div>
+        <h3>E-Commerce Website</h3>
+        <p>Responsive shopping platform with login, cart, and payment integration.</p>
+        <a href="https://github.com/yourusername/ecommerce-website" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact-section" class="section-box">
+      <h2>Contact Me</h2>
+      <ul>
+        <li>Email: <a href="mailto:pollachitourism@gmail.com">pollachitourism@gmail.com</a></li>
+        <li>Phone: <a href="#">8009090123</a></li>
+        <li>Address: Pollachi Bus Stand, Opposite, Pollachi-642123</li>
+      </ul>
+    </div>
+
+    <!-- Section Toggle Script -->
+    <script>
+      function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.style.display = (section.style.display === "block") ? "none" : "block";
+      }
+    </script>
+
+    <!-- Feedback Form -->
+    <div class="form-container">
+      <h2>Visitor Feedback</h2>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfaMGWAT9bRJWlhahoLOLwV2GtwxioC78aNDnwBah2hbZZlYw/viewform?usp=dialog" 
+        width="640" 
+        height="600" 
+        frameborder="0">
+        Loading…
+      </iframe>
     </div>
   </div>
-<div class="form-container">
-  <h2>Visitor Feedback</h2>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfaMGWAT9bRJWlhahoLOLwV2GtwxioC78aNDnwBah2hbZZlYw/viewform?usp=dialog" 
-    width="640" 
-    height="600" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-    Loading…
-  </iframe>
-</div>
 
   <footer>
-    <p>&copy; 2025 My Original Website. All rights reserved.</p>
+    <p id="footer-text">&copy; 2025 My Original Website. All rights reserved.</p>
   </footer>
+  <script>
+  const translations = {
+    en: {
+      'main-heading': 'Welcome to Pollachi Tourism',
+      'weather-title': 'Current Weather in Pollachi',
+      'video-title': 'Click Image to Watch Valparai Droneshot',
+      'festival-title':'HOW POLLACHI MAARIYAMMAN FESRTIVAL LIKE',
+      'Pollachi-Explore': 'Explore Pollachi Tourist Places',
+      'Pollachi-Coimbatore': 'Click the map below to view the location of Pollachi in Coimbatore:',
+      'city-tami': 'city',
+      'select-label': 'some famous place of pollachi:',
+      'leran-text':'Learn more about',
+      'learn-link': 'Pollachi on Wikipedia',
+      'links-title': 'Here are some helpful links to know more about tourist attractions in pollachi:',
+      'footer-text': '© 2025 My Original Website. All rights reserved.'
+    },
+    ta: {
+      'main-heading': 'பொள்ளாச்சி சுற்றுலாவிற்கு வரவேற்கிறோம்!',
+      'weather-title': 'பொள்ளாச்சியின் தற்போதைய வானிலை',
+      'video-title': 'வால்பாறை ட்ரோன் ஷாட்டைப் பார்க்க படத்தைக் கிளிக் செய்யவும்.',
+      'festival-title':'பொள்ளாச்சி மாரியம்மன் திருவிழா எப்படி இருக்கும்',
+      'map-title': 'பொள்ளாச்சி சுற்றுலா தலங்களை ஆராயுங்கள்.',
+      'map-description': 'கோயம்புத்தூரில் பொள்ளாச்சியின் இருப்பிடத்தைக் காண கீழே உள்ள வரைபடத்தைக் கிளிக் செய்யவும்:',
+      'city-tami': 'நகரம்',
+      'select-label': 'பொள்ளாச்சியின் சில பிரபலமான இடங்கள்:',
+      'learn-text':'மேலும் தெரிந்து கொள்ள',
+      'learn-link': 'விக்கிப்பீடியாவில் பொள்ளாச்சி',
+      'links-title': 'இங்கே சில பயனுள்ள இணைப்புகள் உள்ளன.',
+      'footer-text': '© 2025 எனது அசல் வலைத்தளம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.'
+    }
+  };
+
+  function setLanguage(lang) {
+    for (const key in translations[lang]) {
+      const el = document.getElementById(key);
+      if (el) el.innerText = translations[lang][key];
+    }
+  }
+
+  function goToPlace(link) {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  }
+
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
 </body>
 </html>
