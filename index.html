@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>www.pollachitouristplace.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>www.pollachitouristplace.com</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
   <style>
     * {
       margin: 0;
@@ -18,7 +19,7 @@
       color: #333;
       line-height: 1.6;
       text-align: center;
-      padding-bottom: 100px; /* for footer space */
+      padding-bottom: 100px;
     }
 
     header {
@@ -28,7 +29,6 @@
       background-repeat: no-repeat;
       color: #fff;
       padding: 40px 0;
-      text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
@@ -46,10 +46,12 @@
     nav a:hover {
       text-decoration: underline;
     }
- .lang-switcher {
+
+    .lang-switcher {
       text-align: right;
       margin: 10px;
     }
+
     .lang-switcher button {
       padding: 6px 12px;
       margin-left: 5px;
@@ -60,6 +62,7 @@
       color: white;
       border-radius: 4px;
     }
+
     .container {
       max-width: 1000px;
       margin: 30px auto;
@@ -69,7 +72,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
-    .btn {
+    .btn, .popup-btn {
       background-color: #28a745;
       color: white;
       padding: 12px 24px;
@@ -81,45 +84,31 @@
       margin: 10px;
     }
 
-    /* Pollachi Maariyamman festival */
-body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f0f0f0;
+    .btn:hover, .popup-btn:hover {
+      background-color: #218838;
     }
 
-    .popup-btn {
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* Popup container */
     .popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  z-index: 1000;
-  border-radius: 10px;
-  max-width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: center;
-}
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      border-radius: 10px;
+      max-width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: center;
+    }
 
-
-    .popup img {
-      max-width: 100%;
+    .popup img, .popup video {
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
       border-radius: 8px;
     }
 
@@ -133,7 +122,6 @@ body {
       cursor: pointer;
     }
 
-    /* Overlay */
     .overlay {
       position: fixed;
       top: 0;
@@ -143,9 +131,6 @@ body {
       background: rgba(0,0,0,0.4);
       display: none;
       z-index: 999;
-    }
-    .btn:hover {
-      background-color: #218838;
     }
 
     .section-box {
@@ -189,6 +174,13 @@ body {
       margin-top: 40px;
     }
 
+    iframe, video {
+      width: 100%;
+      height: auto;
+      border: none;
+      border-radius: 8px;
+    }
+
     footer {
       background: #1ae84a;
       color: white;
@@ -212,11 +204,8 @@ body {
   </style>
 </head>
 <body>
-  <div class="lang-switcher">
-  <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('ta')">தமிழ்</button>
-</div>
-<script>
+  <!-- content remains unchanged -->
+   <script>
     !function(d,s,id){
       var js,fjs=d.getElementsByTagName(s)[0];
       if(!d.getElementById(id)){
@@ -232,8 +221,11 @@ body {
       <a href="#">Home</a>
     </nav>
   </header>
-  
   <div class="container">
+  <div class="lang-switcher">
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('ta')">தமிழ்</button>
+</div>
   <!--Weather Update -->
  <title>Pollachi Weather</title>
   <h2 id="weather-title">Current Weather in Pollachi</h2>
